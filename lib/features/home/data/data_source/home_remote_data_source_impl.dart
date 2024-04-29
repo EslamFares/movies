@@ -6,7 +6,7 @@ import 'package:movies/features/home/domain/entity/movie_entity.dart';
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiConsumer api;
-  HomeRemoteDataSourceImpl(this.api);
+  HomeRemoteDataSourceImpl({required this.api});
   @override
   Future<List<MovieEntity>> getMovies() async {
     List<MovieEntity> moviesList = [];

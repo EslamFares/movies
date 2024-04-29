@@ -1,31 +1,41 @@
-import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movies/core/network/api/api_service.dart';
-import 'package:movies/features/home/data/data_source/home_remote_data_source_impl.dart';
-import 'package:movies/features/home/data/repos_impl/home_repo_impl.dart';
-import 'package:movies/features/home/domain/repos/home_repo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/core/widgets/shimmer_network_img.dart';
+import 'package:movies/features/home/presentation/manger/cubit/home_cubit.dart';
+import 'package:movies/features/home/presentation/manger/cubit/home_state.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('home')),
-      body: Center(
-        child: TextButton(
-          onPressed: () async {
-            HomeRepo homeRepo = HomeRepoImpl(
-                homeRemoteDataSource:
-                    HomeRemoteDataSourceImpl(ApiService(dio: Dio())));
-
-            final res = await homeRepo.getMovies();
-            res.fold((l) => debugPrint('lllllll: ${l.message}'),
-                (r) => debugPrint("RRRRRRRRRR=> ${r.length}"));
-          },
-          child: const Text('click'),
-        ),
-      ),
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return Scaffold(
+            appBar: AppBar(title: const Text('home')),
+            body: state is FetchMovieSuccess
+                ? ListView.builder(
+                    itemBuilder: (context, index) => Card(
+                        child: Row(
+                      children: [
+                        ShimmerNetworkImg(state.moviesList[index].imgpath),
+                        Expanded(
+                            child: Column(
+                          children: [
+                            Text(state.moviesList[index].moveTitle),
+                            Text(state.moviesList[index].moviedate),
+                          ],
+                        )),
+                      ],
+                    )),
+                    itemCount: state.moviesList.length,
+                  )
+                : state is FetchMovieFailure
+                    ? Center(child: Text(state.message))
+                    : const Center(child: CircularProgressIndicator()));
+      },
     );
   }
 }
