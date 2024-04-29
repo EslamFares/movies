@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "145780511378",
+    "project_id": "movies-b6896",
+    "storage_bucket": "movies-b6896.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145780511378:android:057e71ca80d10b3c808c4b",
+        "android_client_info": {
+          "package_name": "com.eslamfares.movies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGgsghveWTyoBQDDG0JJ4ewUUJrzlSI4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
