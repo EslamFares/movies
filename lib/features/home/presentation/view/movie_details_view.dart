@@ -3,7 +3,10 @@ import 'package:movies/features/home/presentation/view/widgets/movie_details_vie
 
 class MovieDetailsView extends StatelessWidget {
   final int movieId;
-  const MovieDetailsView({super.key, required this.movieId});
+  const MovieDetailsView({
+    super.key,
+    required this.movieId,
+  });
 
   @override
   Widget build(BuildContext context) {

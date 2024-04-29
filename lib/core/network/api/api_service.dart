@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:movies/core/network/api/api_consts.dart';
 import 'package:movies/core/network/api/api_consumer.dart';
 import 'package:movies/core/network/api/api_interceptor.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+// import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 //ToDo: in main UserCubit(ApiService(dio: Dio())),
 class ApiService extends ApiConsumer {
@@ -14,15 +14,15 @@ class ApiService extends ApiConsumer {
       baseUrl: ApiConsts.baseUrl,
       receiveDataWhenStatusError: true,
     );
-    //Simply add PrettyDioLogger to your dio interceptors.
-    dio.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 90));
+    //!active in test Simply add PrettyDioLogger to your dio interceptors.
+    // dio.interceptors.add(PrettyDioLogger(
+    //     requestHeader: true,
+    //     requestBody: true,
+    //     responseBody: true,
+    //     responseHeader: false,
+    //     error: true,
+    //     compact: true,
+    //     maxWidth: 90));
 
     // to add option in (request ex=>headers) & error & respons but i add for every method a lone
     dio.interceptors.add(ApiInterceptor());
