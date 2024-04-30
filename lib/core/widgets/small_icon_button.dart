@@ -22,7 +22,7 @@ class SmallIconButton extends StatelessWidget {
         },
         icon: Icon(
           icon,
-          color: color ?? Colors.white,
+          color: color ?? Colors.blue,
           size: iconSize ?? 25,
         ));
   }

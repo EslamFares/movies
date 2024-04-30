@@ -7,8 +7,8 @@ import 'package:movies/features/home/domain/entity/movie_entity.dart';
 import 'package:movies/features/home/presentation/manger/cubit/home_cubit.dart';
 import 'package:movies/features/home/presentation/view/widgets/movie_rate.dart';
 
-class MoviesDetailsBody extends StatelessWidget {
-  const MoviesDetailsBody({
+class MoviesDetailsItem extends StatelessWidget {
+  const MoviesDetailsItem({
     super.key,
     required this.movieId,
   });

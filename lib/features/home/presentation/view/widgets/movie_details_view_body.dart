@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/features/home/data/functions/movie_index.dart';
 import 'package:movies/features/home/presentation/manger/cubit/home_cubit.dart';
 import 'package:movies/features/home/presentation/manger/cubit/home_state.dart';
-import 'package:movies/features/home/presentation/view/widgets/movies_details_body.dart';
+import 'package:movies/features/home/presentation/view/widgets/movies_details_item.dart';
 
 class MovieDetailsViewBody extends StatelessWidget {
   final int movieId;
@@ -24,7 +24,7 @@ class MovieDetailsViewBody extends StatelessWidget {
                 :
                 // state is FetchMovieSuccess &&
                 HomeCubit.get(context).moviesList.isNotEmpty
-                    ? MoviesDetailsBody(movieId: movieId)
+                    ? MoviesDetailsItem(movieId: movieId)
                     : state is FetchMovieFailure
                         ? Center(
                             child:
