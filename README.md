@@ -16,7 +16,16 @@
 
 <h2> <img align="center" height="20" src="https://cdn-icons-png.flaticon.com/256/777/777242.png"> video for app
 </h2>
- https://drive.google.com/file/d/1zD_LOAN0sqhVYgWRieC7CMzlGXVRcr9I/view?usp=sharing
+## video ==> https://drive.google.com/file/d/1zD_LOAN0sqhVYgWRieC7CMzlGXVRcr9I/view?usp=sharing
+
+<h2> <img align="center" height="20" src="https://w7.pngwing.com/pngs/457/165/png-transparent-computer-icons-hyperlink-link-miscellaneous-blue-text-thumbnail.png"> deeplink
+</h2>
+ ## open home ==> eslamfares.com/
+ <br>
+ ## open movie id: 14 ==> eslamfares.com/details/?id
+ <br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+ ex =>  eslamfares.com/details/14
 
 
 
