@@ -4,6 +4,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:movies/core/router/app_routers.dart';
+import 'package:movies/features/home/data/functions/movie_index.dart';
 import 'package:movies/features/home/presentation/view/movie_details_view.dart';
 
 class FbPushNotifications {
@@ -56,11 +57,15 @@ class FbPushNotifications {
     debugPrint('notificationResponse: ${notificationResponse.payload}');
     var payloadData = jsonDecode(notificationResponse.payload!);
     debugPrint('payloadData: $payloadData');
-    navigatorKey.currentState?.push(
-      MaterialPageRoute<void>(
-          builder: (BuildContext context) =>
-              MovieDetailsView(movieId: int.parse(payloadData['id']))),
-    );
+
+    if (movieIndex(payloadData['id']) != -1) {
+      navigatorKey.currentState?.push(
+        MaterialPageRoute<void>(
+            builder: (BuildContext context) =>
+                MovieDetailsView(movieId: int.parse(payloadData['id']))),
+      );
+    }
+
     // navigatorKey.currentState!.pushNamed("/notification", arguments: notificationResponse);
     //or to open page notifiaction
     // navigatorKey.currentState!.push(MaterialPageRoute(
