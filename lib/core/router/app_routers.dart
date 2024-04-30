@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies/core/router/my_routes.dart';
@@ -22,6 +23,9 @@ final GoRouter screensRouter = GoRouter(
             GoRoute(
                 path: 'details/:movieId',
                 builder: (context, state) {
+                  if (kDebugMode) {
+                    print('Deep link opened: path=${state.pathParameters}');
+                  }
                   return MovieDetailsView(
                       movieId: movieIndex(state.pathParameters['movieId']));
                 }),
