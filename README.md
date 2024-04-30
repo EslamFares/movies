@@ -3,18 +3,21 @@
  
 
 1- clean architecture<br>
-2- See Newest Movies and open it's details<br>
+2- Newest Movies and open it's details<br>
 3- share fav movies<br>
-4- deeplink open movies you shared<br>
+4- deeplink open movies you shared :: (should open link app setting )<br>
 5- handel movies detial screen if deeplink not valied<br>
 6 - firebase notification ( handel if app open or app in background)<br>
-7- send id with firebase notification open movies<br>
+7- send movie id with firebase notification open movies <br>
 
 <h2> <img align="center" height="20" src="https://cdn-icons-png.flaticon.com/512/189/189249.png"> download app
 </h2>
-## Release APK ==>
-<!-- <br>
-## Debug APK ==> -->
+## Release APK ==> https://github.com/EslamFares/movies/blob/master/apk/app-release.apk
+
+<h2> <img align="center" height="20" src="https://cdn-icons-png.flaticon.com/256/777/777242.png"> video for app
+</h2>
+ https://drive.google.com/file/d/1zD_LOAN0sqhVYgWRieC7CMzlGXVRcr9I/view?usp=sharing
+
 
 
 <h2> <img align="center" height="50" src="https://github.com/EslamFares/movies/blob/master/assets/icons/icon_12.png?raw=true"> Screens from app</h2>
