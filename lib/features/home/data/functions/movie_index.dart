@@ -1,4 +1,4 @@
-import 'package:movies/core/utils/app_regex.dart.dart';
+import 'package:movies/core/utils/app/app_regex.dart.dart';
 
 int movieIndex(String? indexSend) {
   if (indexSend == null) {

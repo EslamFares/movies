@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies/core/utils/spacing_extensions.dart';
+import 'package:movies/core/utils/extensions/spacing_extensions.dart';
 
-import '../utils/app_colors.dart';
+import '../utils/app/app_colors.dart';
 
 class CustomBtn extends StatelessWidget {
   const CustomBtn(

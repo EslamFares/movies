@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../utils/app_colors.dart';
+import '../../utils/app/app_colors.dart';
 
 class MyShimmerShape extends StatelessWidget {
   const MyShimmerShape({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_text_styles.dart';
+import '../utils/app/app_text_styles.dart';
 
 class TilteText extends StatelessWidget {
   const TilteText(this.txt, {super.key, this.padding, this.alignment});

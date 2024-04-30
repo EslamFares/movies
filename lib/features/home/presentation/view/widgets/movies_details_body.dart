@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movies/core/utils/app_text_styles.dart';
-import 'package:movies/core/utils/spacing_extensions.dart';
+import 'package:movies/core/utils/app/app_text_styles.dart';
+import 'package:movies/core/utils/extensions/spacing_extensions.dart';
 import 'package:movies/core/widgets/shimmer_network_img.dart';
 import 'package:movies/core/widgets/tilte_text.dart';
 import 'package:movies/features/home/domain/entity/movie_entity.dart';

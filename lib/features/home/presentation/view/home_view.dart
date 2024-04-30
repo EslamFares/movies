@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies/core/utils/app_text_styles.dart';
+import 'package:movies/core/utils/app/app_text_styles.dart';
 import 'package:movies/features/home/presentation/view/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
