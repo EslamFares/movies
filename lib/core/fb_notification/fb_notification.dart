@@ -65,12 +65,6 @@ class FbPushNotifications {
                 MovieDetailsView(movieId: int.parse(payloadData['id']))),
       );
     }
-
-    // navigatorKey.currentState!.pushNamed("/notification", arguments: notificationResponse);
-    //or to open page notifiaction
-    // navigatorKey.currentState!.push(MaterialPageRoute(
-    //     builder: (context) => const NotificationView(),
-    //     settings: RouteSettings(arguments: notificationResponse)));
   }
 
   // show a simple notification

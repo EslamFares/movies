@@ -3,15 +3,12 @@ import 'package:movies/core/network/api/api_consts.dart';
 import 'package:movies/core/network/api/api_consumer.dart';
 import 'package:movies/core/network/api/api_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-// import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-//ToDo: in main UserCubit(ApiService(dio: Dio())),
 class ApiService extends ApiConsumer {
   final Dio dio;
 
   ApiService({required this.dio}) {
     dio.options = BaseOptions(
-      //TODo: add base url
       baseUrl: ApiConsts.baseUrl,
       receiveDataWhenStatusError: true,
     );
@@ -24,7 +21,6 @@ class ApiService extends ApiConsumer {
         compact: true,
         maxWidth: 90));
 
-    // to add option in (request ex=>headers) & error & respons but i add for every method a lone
     dio.interceptors.add(ApiInterceptor());
   }
   @override
@@ -34,19 +30,14 @@ class ApiService extends ApiConsumer {
       Object? data,
       Map<String, String>? headers,
       String? contentType}) async {
-    // try {
     final response = await dio.get(path,
         queryParameters: query,
         data: data,
         options: Options(
-          //ex=>  contentType: Headers.formUrlEncodedContentType,
           contentType: contentType ?? 'application/json',
-          headers: headers, //{'Authorization': 'Bearer $token'}
+          headers: headers,
         ));
     return response.data;
-    // } on DioException catch (e) {
-    //   handelDioExceptions(e);
-    // }
   }
 
   @override
@@ -57,19 +48,12 @@ class ApiService extends ApiConsumer {
       bool isFormData = false,
       Map<String, String>? headers,
       String? contentType}) async {
-    // try {
     final response = await dio.delete(path,
         data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: query,
         options: Options(
-            //ex=>  contentType: Headers.formUrlEncodedContentType,
-            contentType: contentType ?? 'application/json',
-            headers: headers //{'Authorization': 'Bearer $token'}
-            ));
+            contentType: contentType ?? 'application/json', headers: headers));
     return response.data;
-    // } on DioException catch (e) {
-    //   handelDioExceptions(e);
-    // }
   }
 
   @override
@@ -80,19 +64,14 @@ class ApiService extends ApiConsumer {
       dynamic data,
       bool isFormData = false,
       String? contentType}) async {
-    // try {
     final response = await dio.patch(path,
         queryParameters: query,
         data: isFormData ? FormData.fromMap(data) : data,
         options: Options(
-          //ex=>  contentType: Headers.formUrlEncodedContentType,
           contentType: contentType ?? 'application/json',
-          headers: headers, //{'Authorization': 'Bearer $token'}
+          headers: headers,
         ));
     return response.data;
-    // } on DioException catch (e) {
-    //   handelDioExceptions(e);
-    // }
   }
 
   @override
@@ -103,18 +82,13 @@ class ApiService extends ApiConsumer {
       dynamic data,
       bool isFormData = false,
       String? contentType}) async {
-    // try {
     final response = await dio.post(path,
         queryParameters: query,
         data: isFormData ? FormData.fromMap(data) : data,
         options: Options(
-          //ex=>  contentType: Headers.formUrlEncodedContentType,
           contentType: contentType ?? 'application/json',
-          headers: headers, //{'Authorization': 'Bearer $token'}
+          headers: headers,
         ));
     return response.data;
-    // } on DioException catch (e) {
-    //   handelDioExceptions(e);
-    // }
   }
 }
