@@ -54,9 +54,9 @@ class FbPushNotifications {
 
   // on tap local notification in foreground
   static void onNotificationTap(NotificationResponse notificationResponse) {
-    debugPrint('notificationResponse: ${notificationResponse.payload}');
+    // debugPrint('notificationResponse: ${notificationResponse.payload}');
     var payloadData = jsonDecode(notificationResponse.payload!);
-    debugPrint('payloadData: $payloadData');
+    // debugPrint('payloadData: $payloadData');
 
     if (movieIndex(payloadData['id']) != -1) {
       navigatorKey.currentState?.push(
