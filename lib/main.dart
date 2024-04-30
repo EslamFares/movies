@@ -29,6 +29,8 @@ void main() async {
   runApp(const MyApp());
 }
 
+final navKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -37,7 +39,10 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeCubit(getIt<HomeRepo>())..getMovies(),
       child: MaterialApp.router(
+        // navigatorKey: navigatorKey,
+
         title: 'Movies',
+
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.mainColorBlue),

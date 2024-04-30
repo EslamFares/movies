@@ -1,10 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies/core/router/my_routes.dart';
 import 'package:movies/features/home/data/functions/movie_index.dart';
 import 'package:movies/features/home/presentation/view/home_view.dart';
 import 'package:movies/features/home/presentation/view/movie_details_view.dart';
 
-final GoRouter screensRouter = GoRouter(routes: [
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+final GoRouter screensRouter = GoRouter(navigatorKey: navigatorKey, routes: [
   // GoRoute(path: "/", builder: (context, state) => const SplashView()),
   GoRoute(path: "/", builder: (context, state) => const HomeView(), routes: [
     GoRoute(

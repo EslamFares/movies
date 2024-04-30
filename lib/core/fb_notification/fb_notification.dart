@@ -1,10 +1,15 @@
+import 'dart:convert';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:movies/core/router/app_routers.dart';
+import 'package:movies/features/home/presentation/view/movie_details_view.dart';
 
 class FbPushNotifications {
   static final _firebaseMessaging = FirebaseMessaging.instance;
 
-  //request notification permission
+  //#request notification permission
   static Future init() async {
     await _firebaseMessaging.requestPermission(
       alert: true,
@@ -21,7 +26,7 @@ class FbPushNotifications {
     // debugPrint('token: $token');
   }
 
-  //========================local for foreground notifications=========================
+  //#========================local for foreground notifications=========================
   static final FlutterLocalNotificationsPlugin
       _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
@@ -29,7 +34,7 @@ class FbPushNotifications {
   static Future fbForegroundlocalNotificationInit() async {
     // initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/launcher_icon');
+        AndroidInitializationSettings('@mipmap/ic_launcher'); //launcher_icon
     final DarwinInitializationSettings initializationSettingsDarwin =
         DarwinInitializationSettings(
       onDidReceiveLocalNotification: (id, title, body, payload) {},
@@ -48,6 +53,14 @@ class FbPushNotifications {
 
   // on tap local notification in foreground
   static void onNotificationTap(NotificationResponse notificationResponse) {
+    debugPrint('notificationResponse: ${notificationResponse.payload}');
+    var payloadData = jsonDecode(notificationResponse.payload!);
+    debugPrint('payloadData: $payloadData');
+    navigatorKey.currentState?.push(
+      MaterialPageRoute<void>(
+          builder: (BuildContext context) =>
+              MovieDetailsView(movieId: int.parse(payloadData['id']))),
+    );
     // navigatorKey.currentState!.pushNamed("/notification", arguments: notificationResponse);
     //or to open page notifiaction
     // navigatorKey.currentState!.push(MaterialPageRoute(
