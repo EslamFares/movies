@@ -35,7 +35,7 @@ class FbPushNotifications {
   static Future fbForegroundlocalNotificationInit() async {
     // initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/ic_launcher'); //launcher_icon
+        AndroidInitializationSettings('@mipmap/launcher_icon'); //ic_launcher
     final DarwinInitializationSettings initializationSettingsDarwin =
         DarwinInitializationSettings(
       onDidReceiveLocalNotification: (id, title, body, payload) {},
